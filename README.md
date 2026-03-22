@@ -71,5 +71,3 @@ https://github.com/simonleuia/NativeFunctions
 * [x] System permission requested for notifications
 * [x] Local notification triggered after saving a note
 * [x] Notification includes note title
-
-Example:
