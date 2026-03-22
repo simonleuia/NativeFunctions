@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# CloudNote
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project was developed as part of Assignment 3.
 
-## Get started
+CloudNote is a collaborative note-taking app built with React Native (Expo) and Supabase.
+The app allows multiple users to create, view, edit, and delete shared notes, now with support for images and notifications.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## GitHub Repository
 
-2. Start the app
+Project source code:
+https://github.com/simonleuia/NativeFunctions
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* User authentication (sign up, login, logout)
+* Persistent login (session is remembered)
+* Create notes
+* View all notes from all users
+* Edit notes
+* Delete notes with confirmation
+* Attach images to notes (camera or gallery)
+* Image preview before saving
+* Local notifications when a new note is created
+* Input validation (no empty fields)
+* Success and error messages
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Requirements checklist
 
-When you're ready, run:
+### Camera Integration
 
-```bash
-npm run reset-project
-```
+* [x] Permissions for camera and media library
+* [x] User can take a photo inside the app
+* [x] User can pick an image from gallery
+* [x] Selected image is previewed before saving
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+### Storage & Validation
 
-To learn more about developing your project with Expo, look at the following resources:
+* [x] Client-side validation:
+  * Max size 15MB
+  * Allowed formats: JPG, PNG, WebP
+* [x] Images uploaded to Supabase Storage
+* [x] Unique file names used to prevent overwriting
+* [x] Image URL stored in database and linked to note
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+### UI/UX (Images & Feedback)
 
-Join our community of developers creating universal apps.
+* [x] Loading state during upload (spinner + disabled save button)
+* [x] Images displayed without stretching (correct aspect ratio)
+* [x] Images shown:
+  * As thumbnails in note list
+  * In full view in note details
+* [x] Clear error messages for:
+  * Invalid file format
+  * File too large
+  * Upload failure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+### Notifications
+
+* [x] System permission requested for notifications
+* [x] Local notification triggered after saving a note
+* [x] Notification includes note title
+
+Example:
