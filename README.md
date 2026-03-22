@@ -1,100 +1,75 @@
-# Assignment 3 – React Native Notes App
+# CloudNote
 
-This application is a continuation of Assignment 2, where support for images in notes and notifications has been added.
+This project was developed as part of Assignment 3.
 
-The app is built using:
-- React Native (Expo)
-- Supabase (Auth, Database, Storage)
-- Android Emulator (tested with Expo Go)
+CloudNote is a collaborative note-taking app built with React Native (Expo) and Supabase.
+The app allows multiple users to create, view, edit, and delete shared notes, now with support for images and notifications.
 
 ---
 
-## Functionality
+## GitHub Repository
 
-### User Management
-- Users can sign up and log in
-- Authentication is handled using Supabase Auth
-
-### Notes
-- Create new notes
-- Edit existing notes
-- Delete notes
-- View a list of notes
+Project source code:
+https://github.com/simonleuia/NativeFunctions
 
 ---
 
-## Camera Integration
+## Features
 
-- The app requests permission for:
-  - Camera access
-  - Media library access
-
-- Users can:
-  - Take a photo directly in the app
-  - Select an image from the gallery
-
-- The selected image is shown as a preview before saving
-- Users can remove the selected image before saving
-
----
-
-## Storage and Validation
-
-- Images are validated before upload:
-  - Maximum size: 15MB
-  - Allowed formats: JPG, PNG, WebP
-
-- Images are uploaded to Supabase Storage:
-  - Bucket: `note-images`
-  - Unique file names are used to prevent overwriting
-
-- The image URL is stored in the database (`image_url`)
-- The image is linked to the correct note
+* User authentication (sign up, login, logout)
+* Persistent login (session is remembered)
+* Create notes
+* View all notes from all users
+* Edit notes
+* Delete notes with confirmation
+* Attach images to notes (camera or gallery)
+* Image preview before saving
+* Local notifications when a new note is created
+* Input validation (no empty fields)
+* Success and error messages
 
 ---
 
-## UI/UX
+## Requirements checklist
 
-- Loading state is shown during saving and uploading:
-  - A spinner is displayed
-  - The save button is disabled
+### Camera Integration
 
-- Images are displayed correctly:
-  - No stretching
-  - Proper aspect ratio (using `contain`)
-
-- Images are shown:
-  - As thumbnails in the notes list
-  - In full view in the note detail screen
-
-- Error messages are displayed when:
-  - The file type is invalid
-  - The file size exceeds the limit
-  - The upload fails
+* [x] Permissions for camera and media library
+* [x] User can take a photo inside the app
+* [x] User can pick an image from gallery
+* [x] Selected image is previewed before saving
 
 ---
 
-## Notifications
+### Storage & Validation
 
-- The app requests permission to send notifications
-- A local notification is sent after a note is created
-- The notification includes the title of the note
+* [x] Client-side validation:
+  * Max size 15MB
+  * Allowed formats: JPG, PNG, WebP
+* [x] Images uploaded to Supabase Storage
+* [x] Unique file names used to prevent overwriting
+* [x] Image URL stored in database and linked to note
+
+---
+
+### UI/UX (Images & Feedback)
+
+* [x] Loading state during upload (spinner + disabled save button)
+* [x] Images displayed without stretching (correct aspect ratio)
+* [x] Images shown:
+  * As thumbnails in note list
+  * In full view in note details
+* [x] Clear error messages for:
+  * Invalid file format
+  * File too large
+  * Upload failure
 
 ---
 
-## How to Run the Project
+### Notifications
 
-1. Install dependencies:
+* [x] System permission requested for notifications
+* [x] Local notification triggered after saving a note
+* [x] Notification includes note title
 
-npm install
-
-
-2. Start the project:
-
-npx expo start
-
-
-3. Open in emulator:
-- Press `a` for Android
-
----
+Example:
