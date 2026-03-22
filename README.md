@@ -1,4 +1,4 @@
-# CloudNote
+# NativeFunctions
 
 This project was developed as part of Assignment 3.
 
