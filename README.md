@@ -79,3 +79,22 @@ The app is built using:
 - The app requests permission to send notifications
 - A local notification is sent after a note is created
 - The notification includes the title of the note
+
+---
+
+## How to Run the Project
+
+1. Install dependencies:
+
+npm install
+
+
+2. Start the project:
+
+npx expo start
+
+
+3. Open in emulator:
+- Press `a` for Android
+
+---
